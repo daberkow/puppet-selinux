@@ -1,4 +1,4 @@
 ---
 selinux::package_name:
-  - policycoreutils-python-utils
   - selinux-policy-targeted
+  # - policycoreutils-python-utils This is isntalled on the default image

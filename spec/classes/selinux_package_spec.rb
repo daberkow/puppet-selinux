@@ -11,12 +11,12 @@ describe 'selinux' do
             osfamily: 'RedHat',
             operatingsystem: 'RedHat',
             operatingsystemmajrelease: majrelease,
-            selinux_current_mode: 'enforcing',
             os: { release: { major: majrelease }, name: 'RedHat', family: 'RedHat' }
           }
         end
 
         it { is_expected.to compile.with_all_deps }
+        it { is_expected.to contain_package('selinux-policy-targeted').with(ensure: 'installed') }
         it { is_expected.to contain_package('policycoreutils-python').with(ensure: 'installed') }
         it { is_expected.not_to contain_package('auditd') }
       end
