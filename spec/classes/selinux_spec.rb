@@ -9,6 +9,10 @@ describe 'selinux' do
         facts
       end
 
+      describe package(policy_package_for(hosts)) do
+        it { is_expected.to be_installed }
+      end
+
       it { is_expected.to contain_class('selinux').without_mode }
       it { is_expected.to contain_class('selinux').without_type }
       it { is_expected.to contain_class('selinux').without_module }
