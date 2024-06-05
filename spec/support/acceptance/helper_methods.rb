@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 def policy_package_for(hosts)
+  puts hosts[0]['platform']
   case hosts[0]['platform']
   when %r{^debian}
     'selinux-policy-default'
