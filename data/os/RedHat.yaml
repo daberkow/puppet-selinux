@@ -1,5 +1,7 @@
 ---
-selinux::package_name: policycoreutils-python-utils
+selinux::package_name:
+  - policycoreutils-python-utils
+  - selinux-policy-targeted
 selinux::manage_auditd_package: false
 selinux::manage_setroubleshoot_packages: false
 selinux::setroubleshoot_package_names:
